@@ -1,0 +1,72 @@
+.post-container {
+  display: flex;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.form-top-qoute {
+  color: #e98580;
+  margin-bottom: 30px;
+}
+
+input[type="text"] {
+  padding: 12px;
+  width: 100%;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  color: #ccc;
+  font-weight: 100;
+}
+
+input[type="text"]:focus {
+  outline: none;
+}
+
+/* removebackground color*/
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.add-image {
+  color: #ccc;
+  font-size: 12px;
+}
+
+label input {
+  height: 0;
+  opacity: 0;
+  width: 0;
+}
+
+label i {
+  font-size: 2rem;
+  color: #e98580;
+  margin: 20px auto;
+  cursor: pointer;
+}
+
+label i:hover {
+  opacity: 0.8;
+}
+
+input[type="submit"] {
+  width: 100%;
+  border: none;
+  background: none;
+  outline: none;
+  background-color: #e98580;
+  color: #fff;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+input[type="submit"]:hover,
+label span:hover {
+  opacity: 0.7;
+}

@@ -1,0 +1,35 @@
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+li {
+  list-style: none;
+}
+
+.navbar-container {
+  padding: 20px;
+  background: #e98580;
+}
+
+.navbar-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-menu li {
+  margin-right: 20px;
+}
+
+@media screen and (max-width: 600px) {
+  .nav-menu li {
+    margin-right: 0;
+    margin-left: 10px;
+  }
+}
