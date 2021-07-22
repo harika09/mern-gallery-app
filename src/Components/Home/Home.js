@@ -9,7 +9,9 @@ function Home() {
   const [isloading, setLoading] = useState(true);
 
   const loadImages = async () => {
-    const result = await Axios.get("http://localhost:4000/post");
+    const result = await Axios.get(
+      "https://memory-gallery-app.herokuapp.com/post/"
+    );
     setData(result.data);
     setLoading(false);
   };

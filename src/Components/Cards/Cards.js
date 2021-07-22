@@ -35,7 +35,9 @@ function Cards({ post, setPost }) {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        Axios.delete(`http://localhost:4000/post/delete/${id}`).then(
+        Axios.delete(
+          `https://memory-gallery-app.herokuapp.com/post/delete/${id}`
+        ).then(
           setPost(
             post.filter((value) => {
               return value._id !== id;
