@@ -30,7 +30,8 @@ function Cards({ post, setPost }) {
       title: "Are you sure?",
       icon: "warning",
       showCancelButton: true,
-      confirmButtonColor: "#3085d6",
+      buttonsStyling: false,
+      confirmButtonColor: "#FF6767",
       cancelButtonColor: "#d33",
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
@@ -55,7 +56,21 @@ function Cards({ post, setPost }) {
         .map((posts) => {
           return (
             <div key={posts._id} className="gallery">
-              <img className="lozad" src={posts.image} alt={posts.title} />
+              <img
+                className="lozad"
+                onClick={() => {
+                  showInfo();
+                  setData({
+                    id: posts._id,
+                    title: posts.title,
+                    image: posts.image,
+                    timeStamp: posts.timestamp,
+                    favorite: posts.favorite,
+                  });
+                }}
+                src={posts.image}
+                alt={posts.title}
+              />
 
               <div className="post-info">
                 <div className="post-info-top">

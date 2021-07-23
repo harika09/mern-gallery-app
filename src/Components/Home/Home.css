@@ -18,6 +18,49 @@ h1 {
     50% no-repeat;
 }
 
+.swal2-confirm {
+  border: 0;
+  background: initial;
+  background-color: #e98580;
+  color: #fff;
+  padding: 10px;
+  border-radius: 4px;
+  font-size: 1em;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.swal2-confirm:hover {
+  opacity: 0.7;
+}
+
+.swal2-cancel {
+  border: 0;
+  background: initial;
+  background-color: #fff;
+  color: #e98580;
+  border: 1px solid #e98580;
+  padding: 10px;
+  border-radius: 4px;
+  font-size: 1em;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.swal2-cancel:hover {
+  background-color: #e98580;
+  color: #fff;
+}
+
+.swal2-styled.swal2-confirm {
+  border: none;
+  padding: 10px 20px;
+  background: initial;
+  background-color: #e98580;
+  color: #fff;
+  font-size: 1em;
+}
+
 @media screen and (max-width: 690px) {
   .gallery-container {
     grid-template-columns: auto;

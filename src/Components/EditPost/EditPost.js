@@ -68,11 +68,12 @@ function EditPost() {
         ) : (
           <div className="edit-form">
             <form onSubmit={updateData}>
+              <label htmlFor="Title">Edit Momories</label>
               <input
                 type="text"
                 name="title"
                 className="title"
-                value={title}
+                value={data.title}
                 onChange={(e) => {
                   setTitle(e.target.value);
                 }}
