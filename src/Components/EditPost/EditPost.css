@@ -14,3 +14,11 @@
 .edit-form p {
   margin-top: 15px;
 }
+
+label {
+  color: #e98580;
+}
+
+.edit-post-container input {
+  margin-top: 10px;
+}

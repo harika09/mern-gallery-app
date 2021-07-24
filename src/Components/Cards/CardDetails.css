@@ -15,39 +15,3 @@
 .card-details-info span {
   font-size: 0.5rem;
 }
-
-.btn-favorites .btn-fav {
-  border: none;
-  outline: none;
-  background: none;
-  position: absolute;
-  left: 20px;
-  top: 5%;
-  font-size: 1.5rem;
-  cursor: pointer;
-  color: #fff;
-}
-
-.btn-not-fav {
-  border: none;
-  outline: none;
-  background: none;
-  position: absolute;
-  left: 20px;
-  top: 5%;
-  font-size: 1.5rem;
-  cursor: pointer;
-  color: #fff;
-}
-
-.btn-fav.active {
-  color: red;
-}
-
-.like {
-  color: red;
-}
-
-.btn-not-fav.active {
-  color: #fff;
-}

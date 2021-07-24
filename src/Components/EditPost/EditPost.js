@@ -1,24 +1,19 @@
-import React, { useState, useEffect } from "react";
-import { useHistory, useParams } from "react-router-dom";
+import React, { useState } from "react";
+import { useHistory, useParams, useLocation } from "react-router-dom";
 import Axios from "axios";
 import Swal from "sweetalert2";
 import Camera from "../../image/favicon-32x32.png";
 import "./EditPost.css";
 
 function EditPost() {
+  const location = useLocation();
   const history = useHistory();
   const params = useParams();
-  const [title, setTitle] = useState("");
+  const [title, setTitle] = useState(
+    location.state.posts
+  ); /* location.state.post data  */
   const [image, setImage] = useState("");
-  const [data, setData] = useState("");
   const [isloading, setLoading] = useState(false);
-
-  const getData = async () => {
-    const result = await Axios.get(
-      `https://memory-gallery-app.herokuapp.com/post/details/${params.id}`
-    );
-    setData(result.data);
-  };
 
   const updateData = async (e) => {
     setLoading(true);
@@ -56,10 +51,6 @@ function EditPost() {
     });
   };
 
-  useEffect(() => {
-    getData();
-  });
-
   return (
     <div className="edit-post-container">
       <div className="edit-post-content bd-container">
@@ -73,11 +64,10 @@ function EditPost() {
                 type="text"
                 name="title"
                 className="title"
-                value={data.title}
+                value={title}
                 onChange={(e) => {
                   setTitle(e.target.value);
                 }}
-                placeholder={data.title}
               />
               <p className="add-image">Click to update the image</p>
               <label>

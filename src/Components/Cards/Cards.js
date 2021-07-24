@@ -99,8 +99,23 @@ function Cards({ post, setPost }) {
                   </div>
 
                   <div className="post-btn">
-                    <Link to={`/edit/post/${posts._id}`}>
-                      <button>
+                    <Link
+                      to={{
+                        pathname: `/edit/post/${posts._id}`,
+                        state: { posts: posts.title },
+                      }}
+                    >
+                      <button
+                        onClick={() => {
+                          setData({
+                            id: posts._id,
+                            title: posts.title,
+                            image: posts.image,
+                            timeStamp: posts.timestamp,
+                            favorite: posts.favorite,
+                          });
+                        }}
+                      >
                         <i className="far fa-edit"></i>
                       </button>
                     </Link>
