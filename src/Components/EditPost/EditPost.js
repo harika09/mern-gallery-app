@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useHistory, useParams, useLocation } from "react-router-dom";
 import Axios from "axios";
 import Swal from "sweetalert2";
-import Camera from "../../image/favicon-32x32.png";
+import Camera from "../../Assets/image/favicon-32x32.png";
 import "./EditPost.css";
 
 function EditPost() {
@@ -79,7 +79,7 @@ function EditPost() {
                 <img src={Camera} alt="camera-icon" />
               </label>
 
-              <input type="submit" value="Post" />
+              <input type="submit" value="Update" />
             </form>
           </div>
         )}

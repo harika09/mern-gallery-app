@@ -14,8 +14,8 @@ h1 {
   left: 0;
   height: 100%;
   width: 100%;
-  background: rgba(255, 255, 255, 0) url("../../image/Spin-1s-200px.gif") 50%
-    50% no-repeat;
+  background: rgba(255, 255, 255, 0) url("../../Assets/image/Spin-1s-200px.gif")
+    50% 50% no-repeat;
 }
 
 .swal2-confirm {

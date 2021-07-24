@@ -77,14 +77,14 @@ li {
     position: relative;
     width: 50px;
     height: 20px;
-    background: url("../../image/icon-hamburger.svg") no-repeat center;
+    background: url("../../Assets/image/icon-hamburger.svg") no-repeat center;
     background-size: 25px;
     cursor: pointer;
     -webkit-tap-highlight-color: transparent;
   }
 
   .menu-toggle.active {
-    background: url(../../image/icon-close.svg) no-repeat center;
+    background: url("../../Assets/image/icon-close.svg") no-repeat center;
   }
 
   .nav-menu li {

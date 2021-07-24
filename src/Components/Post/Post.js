@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useHistory } from "react-router";
 import Axios from "axios";
 import Swal from "sweetalert2";
-import Camera from "../../image/favicon-32x32.png";
+import Camera from "../../Assets/image/favicon-32x32.png";
 import "./Post.css";
 
 function Post() {
