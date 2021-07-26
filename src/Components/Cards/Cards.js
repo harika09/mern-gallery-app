@@ -52,87 +52,82 @@ function Cards({ post, setPost }) {
 
   return (
     <div className="gallery-container">
-      {post
-        .map((posts) => {
-          return (
-            <div key={posts._id} className="gallery">
-              <img
-                className="lozad"
-                onClick={() => {
-                  showInfo();
-                  setData({
-                    id: posts._id,
-                    title: posts.title,
-                    image: posts.image,
-                    timeStamp: posts.timestamp,
-                    favorite: posts.favorite,
-                  });
-                }}
-                src={posts.image}
-                alt={posts.title}
-              />
+      {post.map((posts) => {
+        return (
+          <div key={posts._id} className="gallery">
+            <img
+              onClick={() => {
+                showInfo();
+                setData({
+                  id: posts._id,
+                  title: posts.title,
+                  image: posts.image,
+                  timeStamp: posts.timestamp,
+                  favorite: posts.favorite,
+                });
+              }}
+              src={posts.image}
+              alt={posts.title}
+            />
 
-              <div className="post-info">
-                <div className="post-info-top">
-                  <p className="post-title">
-                    {posts.title.substring(0, 40)}...
-                  </p>
-                  <button
-                    className="btn-read-more"
-                    onClick={() => {
-                      showInfo();
-                      setData({
-                        id: posts._id,
-                        title: posts.title,
-                        image: posts.image,
-                        timeStamp: posts.timestamp,
-                        favorite: posts.favorite,
-                      });
+            <div className="post-info">
+              <div className="post-info-top">
+                <p className="post-title">{posts.title.substring(0, 40)}...</p>
+                <button
+                  className="btn-read-more"
+                  onClick={() => {
+                    showInfo();
+                    setData({
+                      id: posts._id,
+                      title: posts.title,
+                      image: posts.image,
+                      timeStamp: posts.timestamp,
+                      favorite: posts.favorite,
+                    });
+                  }}
+                >
+                  Read More
+                </button>
+              </div>
+              <div className="lower-post">
+                <div className="time">
+                  <span>{moment(posts.timestamp).fromNow()}</span>
+                </div>
+
+                <div className="post-btn">
+                  <Link
+                    to={{
+                      pathname: `/edit/post/${posts._id}`,
+                      state: { posts: posts.title },
                     }}
                   >
-                    Read More
-                  </button>
-                </div>
-                <div className="lower-post">
-                  <div className="time">
-                    <span>{moment(posts.timestamp).fromNow()}</span>
-                  </div>
-
-                  <div className="post-btn">
-                    <Link
-                      to={{
-                        pathname: `/edit/post/${posts._id}`,
-                        state: { posts: posts.title },
-                      }}
-                    >
-                      <button
-                        onClick={() => {
-                          setData({
-                            id: posts._id,
-                            title: posts.title,
-                            image: posts.image,
-                            timeStamp: posts.timestamp,
-                            favorite: posts.favorite,
-                          });
-                        }}
-                      >
-                        <i className="far fa-edit"></i>
-                      </button>
-                    </Link>
                     <button
                       onClick={() => {
-                        deleteBtn(posts._id);
+                        setData({
+                          id: posts._id,
+                          title: posts.title,
+                          image: posts.image,
+                          timeStamp: posts.timestamp,
+                          favorite: posts.favorite,
+                        });
                       }}
                     >
-                      <i className="fas fa-trash-alt"></i>
+                      <i className="far fa-edit"></i>
                     </button>
-                  </div>
+                  </Link>
+                  <button
+                    onClick={() => {
+                      deleteBtn(posts._id);
+                    }}
+                  >
+                    <i className="fas fa-trash-alt"></i>
+                  </button>
                 </div>
               </div>
             </div>
-          );
-        })
-        .reverse()}
+          </div>
+        );
+      })}
 
       {Object.keys(data ?? {}).length > 0 ? (
         <div key={data.id} className={click ? "modal active" : "modal"}>
