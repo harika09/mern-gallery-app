@@ -45,7 +45,12 @@ function Cards({ post, setPost }) {
             })
           )
         );
-        Swal.fire("Deleted!", "Your file has been deleted.", "success");
+        Swal.fire({
+          title: "Your file has been deleted.",
+          icon: "success",
+          buttonsStyling: false,
+          confirmButtonColor: "#FF6767",
+        });
       }
     });
   };

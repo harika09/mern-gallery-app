@@ -29,6 +29,8 @@ function EditPost() {
         icon: "error",
         title: "Oops...",
         text: "Fields cannot be empty",
+        confirmButtonColor: "#FF6767",
+        buttonsStyling: false,
       });
       setLoading(false);
     } else {
@@ -42,6 +44,7 @@ function EditPost() {
             title: "Oops...",
             text: response.data.error,
             confirmButtonColor: "#FF6767",
+            buttonsStyling: false,
           });
           setLoading(false);
         }
