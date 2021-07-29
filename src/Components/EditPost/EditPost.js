@@ -24,31 +24,40 @@ function EditPost() {
     data.append("image", image);
     data.append("title", title);
 
-    Axios.post(
-      `https://memory-gallery-app.herokuapp.com/post/edit/${params.id}`,
-      data
-    ).then((response) => {
-      if (response.data.error) {
-        Swal.fire({
-          icon: "error",
-          title: "Oops...",
-          text: response.data.error,
-        });
-        setLoading(false);
-      }
-      if (response.data.success) {
-        Swal.fire({
-          position: "center",
-          icon: "success",
-          title: response.data.success,
-          showConfirmButton: false,
-          timer: 1500,
-        }).then(() => {
+    if (!title.trim()) {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Fields cannot be empty",
+      });
+      setLoading(false);
+    } else {
+      Axios.post(
+        `https://memory-gallery-app.herokuapp.com/post/edit/${params.id}`,
+        data
+      ).then((response) => {
+        if (response.data.error) {
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: response.data.error,
+          });
           setLoading(false);
-          history.push("/");
-        });
-      }
-    });
+        }
+        if (response.data.success) {
+          Swal.fire({
+            position: "center",
+            icon: "success",
+            title: response.data.success,
+            showConfirmButton: false,
+            timer: 1500,
+          }).then(() => {
+            setLoading(false);
+            history.push("/");
+          });
+        }
+      });
+    }
   };
 
   return (

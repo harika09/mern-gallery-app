@@ -1,9 +1,9 @@
 .post-container {
   display: flex;
-  min-height: 100vh;
   justify-content: center;
   align-items: center;
   text-align: center;
+  min-height: 80vh;
 }
 
 .form-top-qoute {

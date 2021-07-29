@@ -18,9 +18,9 @@ function Post() {
     /* Fetch Image */
     /* Should be the same with multer single('image') */
     data.append("image", image);
-    data.append("title", title);
+    data.append("title", title.trim());
 
-    if (!title || !image) {
+    if (!title.trim() || !image) {
       Swal.fire({
         icon: "error",
         title: "Oops...",
@@ -34,6 +34,7 @@ function Post() {
       ).then((response) => {
         if (response.data.error) {
           setError(response.data.error);
+          console.log(response.data.error);
         } else {
           Swal.fire({
             position: "center",

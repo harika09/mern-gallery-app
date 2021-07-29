@@ -6,6 +6,17 @@
   font-family: "Noto Sans", sans-serif;
 }
 
+button,
+a,
+img {
+  -webkit-tap-highlight-color: rgba(
+    0,
+    0,
+    0,
+    0
+  ); /* remove  blue background when button clicked */
+}
+
 .bd-container {
   margin: 0 1rem;
   max-width: 1340px;
