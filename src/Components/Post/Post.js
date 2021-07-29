@@ -41,6 +41,7 @@ function Post() {
             icon: "success",
             title: "Added to Gallery",
             showConfirmButton: false,
+            buttonsStyling: false,
             timer: 1500,
           }).then(() => {
             history.push("/");

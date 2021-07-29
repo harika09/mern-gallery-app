@@ -11,6 +11,10 @@
   text-align: center;
 }
 
+.swal2-styled.swal2-confirm {
+  background-color: #e98580;
+}
+
 .edit-form p {
   margin-top: 15px;
 }

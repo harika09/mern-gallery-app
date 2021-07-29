@@ -41,6 +41,7 @@ function EditPost() {
             icon: "error",
             title: "Oops...",
             text: response.data.error,
+            buttonsStyling: false,
           });
           setLoading(false);
         }
