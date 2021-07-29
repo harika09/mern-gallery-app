@@ -34,14 +34,14 @@ function Post() {
       ).then((response) => {
         if (response.data.error) {
           setError(response.data.error);
-          console.log(response.data.error);
         } else {
           Swal.fire({
             position: "center",
             icon: "success",
             title: "Added to Gallery",
-            showConfirmButton: false,
             buttonsStyling: false,
+            confirmButtonColor: "#FF6767",
+            cancelButtonColor: "#d33",
             timer: 1500,
           }).then(() => {
             history.push("/");

@@ -41,7 +41,7 @@ function EditPost() {
             icon: "error",
             title: "Oops...",
             text: response.data.error,
-            buttonsStyling: false,
+            confirmButtonColor: "#FF6767",
           });
           setLoading(false);
         }
@@ -50,7 +50,9 @@ function EditPost() {
             position: "center",
             icon: "success",
             title: response.data.success,
-            showConfirmButton: false,
+            buttonsStyling: false,
+            confirmButtonColor: "#FF6767",
+            cancelButtonColor: "#d33",
             timer: 1500,
           }).then(() => {
             setLoading(false);
