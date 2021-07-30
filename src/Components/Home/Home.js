@@ -9,6 +9,7 @@ function Home() {
   let [page, setPage] = useState(PAGE_NUMBER);
   const [data, setData] = useState([]);
   const [isloading, setLoading] = useState(true);
+  const [pageLoad, setPageLoad] = useState(true);
   const [maxPage, setMaxPage] = useState("");
 
   const pagination = async () => {
@@ -18,9 +19,14 @@ function Home() {
     setData((prev) => [...prev, ...results.data.post]);
     setMaxPage(results.data.totalPage);
     setLoading(false);
+    setPageLoad(false);
   };
 
   useEffect(() => {
+    if (pageLoad) {
+      /* if PageLoad is true */
+      setLoading(false);
+    }
     pagination();
 
     window.onscroll = infiniteScroll;
@@ -58,7 +64,11 @@ function Home() {
           <i>"Things end but memories last forever."</i>
         </h1>
 
-        <Cards post={data} setPost={setData} />
+        {pageLoad ? (
+          <BeatLoader loading color="#e98580" />
+        ) : (
+          <Cards post={data} setPost={setData} />
+        )}
         {isloading && <BeatLoader loading color="#e98580" />}
       </div>
     </div>
