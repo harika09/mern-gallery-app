@@ -8,14 +8,13 @@ li {
 }
 
 .navbar-container {
-  padding: 15px 10px;
-  width: 100%;
+  padding: 15px;
+  background: #e98580;
   position: fixed;
   right: 0;
   left: 0;
   z-index: 100;
   transition: 0.5s;
-  background-color: #e98580;
 }
 
 .navbar-wrapper {
@@ -43,7 +42,7 @@ li {
     display: flex;
     flex-direction: column;
     width: 80%;
-    height: 30%;
+    height: 25vh;
     position: absolute;
     top: 95px;
     right: 0%;
