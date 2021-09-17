@@ -39,6 +39,10 @@ li {
 
 @media screen and (max-width: 680px) {
   .nav-menu {
+    display: none;
+  }
+
+  .nav-menu.active {
     display: flex;
     flex-direction: column;
     width: 80%;
@@ -47,9 +51,6 @@ li {
     top: 95px;
     right: 0%;
     opacity: 1;
-  }
-
-  .nav-menu.active {
     left: 10%;
     opacity: 1;
     z-index: 1;

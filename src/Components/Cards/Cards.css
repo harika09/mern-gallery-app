@@ -4,11 +4,10 @@
   justify-content: center;
   grid-gap: 10px;
   margin-bottom: 20px;
-  min-height: 100vh;
 }
 
 .gallery {
-  max-width: 450px;
+  max-width: 350px;
   position: relative;
 }
 

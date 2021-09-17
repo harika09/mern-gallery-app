@@ -7,6 +7,7 @@ import Swal from "sweetalert2";
 import "./Cards.css";
 
 function Cards({ post, setPost }) {
+  //*
   const [data, setData] = useState({
     id: "",
     title: "",
